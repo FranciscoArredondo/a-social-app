@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6az-VM-qr5">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6az-VM-qr5" customClass="HeaderView" customModule="The_Social_Network" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="125"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_title" translatesAutoresizingMaskIntoConstraints="NO" id="tgR-2x-H56">
@@ -66,7 +66,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.84848565924657537" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9AV-7m-lvF">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9AV-7m-lvF">
                                 <rect key="frame" x="90" y="181" width="140" height="140"/>
                                 <color key="backgroundColor" red="0.25895920395851135" green="0.34795963764190674" blue="0.57657444477081299" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -76,19 +76,19 @@
                                 <state key="normal" image="f"/>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lez-d9-y1x">
-                                <rect key="frame" x="41" y="341" width="238" height="125"/>
+                                <rect key="frame" x="41" y="341" width="238" height="107"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FIG-Jy-VPW">
-                                        <rect key="frame" x="0.0" y="0.0" width="238" height="68"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="238" height="50"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s9h-Gc-5AV">
-                                                <rect key="frame" x="0.0" y="0.0" width="238" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s9h-Gc-5AV" customClass="SignInUITextField" customModule="The_Social_Network" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="238" height="21"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e6Z-0K-0FC">
-                                                <rect key="frame" x="0.0" y="38" width="238" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e6Z-0K-0FC" customClass="SignInUITextField" customModule="The_Social_Network" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="29" width="238" height="21"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -96,12 +96,15 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O38-bd-luK">
-                                        <rect key="frame" x="0.0" y="88" width="238" height="37"/>
+                                        <rect key="frame" x="0.0" y="70" width="238" height="37"/>
                                         <color key="backgroundColor" red="0.8666666666666667" green="0.17254901960784313" blue="0.0" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="0.84807363013698622" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SqB-TG-tEV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -124,6 +127,13 @@
                             <constraint firstItem="6az-VM-qr5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zoy-hv-Pvu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="s9h-Gc-5AV" id="LJs-Wf-6IF"/>
+                        <outlet property="fbLoginButton" destination="9AV-7m-lvF" id="fwe-gE-Izb"/>
+                        <outlet property="headerView" destination="6az-VM-qr5" id="fel-wu-Jay"/>
+                        <outlet property="passwordTextField" destination="e6Z-0K-0FC" id="dQj-tr-qJV"/>
+                        <outlet property="signInButton" destination="O38-bd-luK" id="619-KF-d4x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0623C8731F1ADC4A00231633 /* DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0623C8721F1ADC4A00231633 /* DropShadow.swift */; };
+		0623C8751F1ADCCC00231633 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0623C8741F1ADCCC00231633 /* Constants.swift */; };
+		0623C8781F1ADF2B00231633 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0623C8771F1ADF2B00231633 /* HeaderView.swift */; };
+		0623C87C1F1AFA2600231633 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0623C87B1F1AFA2600231633 /* UIButton+Ext.swift */; };
+		0623C8801F1B040500231633 /* SignInUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0623C87F1F1B040500231633 /* SignInUITextField.swift */; };
 		06E409151F19A02500935B80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E409141F19A02500935B80 /* AppDelegate.swift */; };
 		06E409171F19A02500935B80 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E409161F19A02500935B80 /* SignInVC.swift */; };
 		06E4091A1F19A02500935B80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06E409181F19A02500935B80 /* Main.storyboard */; };
@@ -39,6 +44,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0623C8721F1ADC4A00231633 /* DropShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropShadow.swift; sourceTree = "<group>"; };
+		0623C8741F1ADCCC00231633 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0623C8771F1ADF2B00231633 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		0623C87B1F1AFA2600231633 /* UIButton+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
+		0623C87F1F1B040500231633 /* SignInUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInUITextField.swift; sourceTree = "<group>"; };
 		06E409111F19A02500935B80 /* The Social Network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Social Network.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06E409141F19A02500935B80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06E409161F19A02500935B80 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -106,6 +116,8 @@
 			children = (
 				06E409181F19A02500935B80 /* Main.storyboard */,
 				06E409201F19A02500935B80 /* LaunchScreen.storyboard */,
+				0623C8771F1ADF2B00231633 /* HeaderView.swift */,
+				0623C87F1F1B040500231633 /* SignInUITextField.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -124,6 +136,30 @@
 				06E4091E1F19A02500935B80 /* Assets.xcassets */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		0623C8701F1ADAD600231633 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0623C87B1F1AFA2600231633 /* UIButton+Ext.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		0623C8711F1ADAE700231633 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0623C8721F1ADC4A00231633 /* DropShadow.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		0623C8761F1ADCD000231633 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0623C8741F1ADCCC00231633 /* Constants.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		06E409081F19A02500935B80 = {
@@ -151,6 +187,9 @@
 		06E409131F19A02500935B80 /* The Social Network */ = {
 			isa = PBXGroup;
 			children = (
+				0623C8761F1ADCD000231633 /* Utils */,
+				0623C8711F1ADAE700231633 /* Protocols */,
+				0623C8701F1ADAD600231633 /* Extensions */,
 				0623C86F1F19A5A100231633 /* Resources */,
 				0623C86E1F19A59B00231633 /* Model */,
 				0623C86D1F19A59400231633 /* View */,
@@ -487,8 +526,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0623C8751F1ADCCC00231633 /* Constants.swift in Sources */,
+				0623C8781F1ADF2B00231633 /* HeaderView.swift in Sources */,
+				0623C87C1F1AFA2600231633 /* UIButton+Ext.swift in Sources */,
 				06E409171F19A02500935B80 /* SignInVC.swift in Sources */,
+				0623C8801F1B040500231633 /* SignInUITextField.swift in Sources */,
 				06E409151F19A02500935B80 /* AppDelegate.swift in Sources */,
+				0623C8731F1ADC4A00231633 /* DropShadow.swift in Sources */,
 				06E4091D1F19A02500935B80 /* The_Social_Network.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
