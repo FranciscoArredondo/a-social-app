@@ -131,10 +131,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailTextField" destination="s9h-Gc-5AV" id="LJs-Wf-6IF"/>
+                        <outlet property="emailTextField" destination="s9h-Gc-5AV" id="hMR-cn-qg9"/>
                         <outlet property="fbLoginButton" destination="9AV-7m-lvF" id="fwe-gE-Izb"/>
                         <outlet property="headerView" destination="6az-VM-qr5" id="fel-wu-Jay"/>
-                        <outlet property="passwordTextField" destination="e6Z-0K-0FC" id="dQj-tr-qJV"/>
+                        <outlet property="passwordTextField" destination="e6Z-0K-0FC" id="crz-oF-Pyh"/>
                         <outlet property="signInButton" destination="O38-bd-luK" id="619-KF-d4x"/>
                     </connections>
                 </viewController>

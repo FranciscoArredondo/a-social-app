@@ -16,9 +16,9 @@ class SignInVC: UIViewController {
 
     @IBOutlet weak var fbLoginButton: UIButton!
     
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var emailTextField: SignInUITextField!
     
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: SignInUITextField!
     
     @IBOutlet weak var signInButton: UIButton!
     
@@ -59,6 +59,21 @@ class SignInVC: UIViewController {
     }
     
     @IBAction func signInButtonPressed(_ sender: UIButton) {
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+                if error == nil {
+                    print("PF: Email user authenticated with Firebase")
+                } else {
+                    Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+                        if error != nil {
+                            print("PF: Email user could not be created on Firebase, error: \(String(describing: error))")
+                        } else {
+                            print("PF: Sucessfully created/authenticated new user on Firebase")
+                        }
+                    })
+                }
+            })
+        }
     }
 }
 
