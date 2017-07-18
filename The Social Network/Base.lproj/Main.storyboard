@@ -191,13 +191,17 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uFW-my-yxX">
                                         <rect key="frame" x="8" y="4" width="272" height="57"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="KIr-Ga-tsM">
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="KIr-Ga-tsM">
                                                 <rect key="frame" x="0.0" y="0.0" width="57" height="57"/>
                                                 <color key="backgroundColor" red="0.0" green="0.51372549020000002" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="57" id="7Lr-MR-s7X"/>
                                                     <constraint firstAttribute="height" constant="57" id="8mz-xF-4gg"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="BZ0-di-9ns" appends="YES" id="vNS-Ue-AaZ"/>
+                                                </connections>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rKJ-th-F7B" customClass="SignInUITextField" customModule="The_Social_Network" customModuleProvider="target">
                                                 <rect key="frame" x="62" y="0.0" width="148" height="57"/>
@@ -356,6 +360,11 @@
                 <tapGestureRecognizer id="jZ4-Zo-oZl">
                     <connections>
                         <action selector="signOutButtonPressed:" destination="yq0-H7-CbJ" id="4vM-oX-hvb"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="BZ0-di-9ns">
+                    <connections>
+                        <action selector="addImageTapped:" destination="yq0-H7-CbJ" id="gpj-T6-Ubm"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
