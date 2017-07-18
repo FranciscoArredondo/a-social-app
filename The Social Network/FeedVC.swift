@@ -42,7 +42,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
 
-    @IBAction func signOutButtonPressed(_ sender: UIButton) {
+    @IBAction func signOutButtonPressed(_ sender: Any) {
         let keychainWrapper = KeychainWrapper.standard.remove(key: KEY_UID)
         print("PF: Id removed from keychain \(keychainWrapper)")
         try! Auth.auth().signOut()

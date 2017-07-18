@@ -13,6 +13,7 @@
 		0623C8781F1ADF2B00231633 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0623C8771F1ADF2B00231633 /* HeaderView.swift */; };
 		0623C87C1F1AFA2600231633 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0623C87B1F1AFA2600231633 /* UIButton+Ext.swift */; };
 		0623C8801F1B040500231633 /* SignInUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0623C87F1F1B040500231633 /* SignInUITextField.swift */; };
+		067C66A81F1DA1F900D6069B /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067C66A71F1DA1F900D6069B /* DataService.swift */; };
 		0696AA861F1D8B99003C6DD4 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0696AA851F1D8B99003C6DD4 /* PostCell.swift */; };
 		0696AA881F1D8DFB003C6DD4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0696AA871F1D8DFB003C6DD4 /* CardView.swift */; };
 		06E409151F19A02500935B80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E409141F19A02500935B80 /* AppDelegate.swift */; };
@@ -53,6 +54,7 @@
 		0623C8771F1ADF2B00231633 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		0623C87B1F1AFA2600231633 /* UIButton+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
 		0623C87F1F1B040500231633 /* SignInUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInUITextField.swift; sourceTree = "<group>"; };
+		067C66A71F1DA1F900D6069B /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		0696AA851F1D8B99003C6DD4 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		0696AA871F1D8DFB003C6DD4 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		06E409111F19A02500935B80 /* The Social Network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Social Network.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +173,14 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		067C66A61F1DA1D700D6069B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				067C66A71F1DA1F900D6069B /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		06E409081F19A02500935B80 = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +206,7 @@
 		06E409131F19A02500935B80 /* The Social Network */ = {
 			isa = PBXGroup;
 			children = (
+				067C66A61F1DA1D700D6069B /* Services */,
 				0623C8761F1ADCD000231633 /* Utils */,
 				0623C8711F1ADAE700231633 /* Protocols */,
 				0623C8701F1ADAD600231633 /* Extensions */,
@@ -538,6 +549,7 @@
 				06218D761F1C24C3006EF7CC /* FeedVC.swift in Sources */,
 				0623C8751F1ADCCC00231633 /* Constants.swift in Sources */,
 				0623C8781F1ADF2B00231633 /* HeaderView.swift in Sources */,
+				067C66A81F1DA1F900D6069B /* DataService.swift in Sources */,
 				0623C87C1F1AFA2600231633 /* UIButton+Ext.swift in Sources */,
 				06E409171F19A02500935B80 /* SignInVC.swift in Sources */,
 				0623C8801F1B040500231633 /* SignInUITextField.swift in Sources */,
