@@ -31,7 +31,12 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         imagePicker.allowsEditing = true
         imagePicker.delegate = self
         
+        
+        
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
+            
+            self.posts = []
+            
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshot {
                     print("PF: \(snap)")
@@ -107,14 +112,18 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         if let imageData = UIImageJPEGRepresentation(img, 0.2) {
             
             let imageUid = NSUUID().uuidString
-            let metaData = StorageMetadata()
-            metaData.contentType = "image/jpg"
-            DataService.ds.REF_POSTS_IMAGES.child(imageUid).putData(imageData, metadata: metaData) { (metadata, error) in
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/jpg"
+            DataService.ds.REF_POSTS_IMAGES.child(imageUid).putData(imageData, metadata: metadata) { (metadata, error) in
                 if error != nil {
                     print("PF: unable to upload image to firebase storage")
                 } else {
                     print("PF: Sucessfully uploaded image to firebase storage")
-                    let downloadURL = metaData.downloadURL()?.absoluteString
+                    let downloadURL = metadata?.downloadURL()?.absoluteString
+                    if let url = downloadURL {
+                        self.postToFirebase(imageUrl: url)
+                    }
+                    
                 }
             }
         }
@@ -126,5 +135,19 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         print("PF: Id removed from keychain \(keychainWrapper)")
         try! Auth.auth().signOut()
         dismiss(animated: true, completion: nil)
+    }
+    
+    func postToFirebase(imageUrl: String) {
+        let post: Dictionary<String, Any> = ["caption": captionField.text!,
+                                             "imageUrl": imageUrl,
+                                             "likes" : 0]
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+        
+        captionField.text = ""
+        imageSelected = false
+        addImageView.image = UIImage(named: "add-image")
+        
+        tableView.reloadData()
     }
 }
