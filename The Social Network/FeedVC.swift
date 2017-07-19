@@ -13,14 +13,14 @@ import Firebase
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-
     @IBOutlet weak var addImageView: UIImageView!
     @IBOutlet weak var postImageView: UIButton!
-    @IBOutlet weak var signOutButton: UIButton!
+    @IBOutlet weak var captionField: SignInUITextField!
     
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
+    var imageSelected: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,6 +79,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             addImageView.image = image
+            imageSelected = true
         } else {
             print("PF: A vaild image was not selected")
         }
@@ -91,6 +92,34 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     }
     
     
+    @IBAction func postButtonPressed(_ sender: UIButton) {
+        
+        guard let caption = captionField.text, caption != "" else {
+            print("PF: Caption must be entered.")
+            return
+        }
+        
+        guard let img = addImageView.image, imageSelected else {
+            print("PF: An image must be selected.")
+            return
+        }
+        
+        if let imageData = UIImageJPEGRepresentation(img, 0.2) {
+            
+            let imageUid = NSUUID().uuidString
+            let metaData = StorageMetadata()
+            metaData.contentType = "image/jpg"
+            DataService.ds.REF_POSTS_IMAGES.child(imageUid).putData(imageData, metadata: metaData) { (metadata, error) in
+                if error != nil {
+                    print("PF: unable to upload image to firebase storage")
+                } else {
+                    print("PF: Sucessfully uploaded image to firebase storage")
+                    let downloadURL = metaData.downloadURL()?.absoluteString
+                }
+            }
+        }
+        
+    }
 
     @IBAction func signOutButtonPressed(_ sender: Any) {
         let keychainWrapper = KeychainWrapper.standard.remove(key: KEY_UID)
