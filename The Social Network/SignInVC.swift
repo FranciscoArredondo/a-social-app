@@ -11,7 +11,7 @@ import FacebookLogin
 import FirebaseAuth
 import SwiftKeychainWrapper
 
-class SignInVC: UIViewController {
+class SignInVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var headerView: HeaderView!
 
@@ -31,6 +31,8 @@ class SignInVC: UIViewController {
         headerView.addDropShadow()
         fbLoginButton.asCircle()
         signInButton.configureSignInButton()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         
     }
     
@@ -103,6 +105,14 @@ class SignInVC: UIViewController {
                 }
             })
         }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.endEditing(true)
     }
 }
 
